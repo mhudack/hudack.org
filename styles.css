@@ -1,0 +1,27 @@
+body {
+    font-family: 'Times New Roman'; 
+    font-size: 1.2em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    max-width: 800px;
+    weight: 400;
+}
+hr {
+    margin-top: 1px solid #eee;
+}
+a {
+    color: rgba(227, 5, 5, 0.836);
+}
+h1 {
+    text-transform: uppercase;
+    font-size: 2em;
+}
+li {
+    line-height: 1.3em;
+}
+@media all and (orientation:portrait) {
+    body {
+        font-size: 3em;
+    }
+}
