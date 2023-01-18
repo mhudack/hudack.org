@@ -4,11 +4,15 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
-    max-width: 800px;
+    max-width: 550px;
     weight: 400;
+    color: #000000bd;
 }
 hr {
     margin-top: 1px solid #eee;
+}
+p {
+    margin-bottom: 32px
 }
 a {
     color: rgba(227, 5, 5, 0.836);
@@ -17,9 +21,18 @@ h1 {
     text-transform: uppercase;
     font-size: 2em;
 }
+h2 {
+    font-family: 'Garamond';
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
 li {
     line-height: 1.3em;
 }
+img {
+  margin-bottom: 32px;
+} 
+
 @media all and (orientation:portrait) {
     body {
         font-size: 3em;
