@@ -36,6 +36,7 @@ img {
 
 @media all and (orientation:portrait) {
     body {
-        font-size: 3em;
+        font-size: 2.7em;
+	max-width: 650px;
     }
 }
