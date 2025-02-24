@@ -1,21 +1,13 @@
 body {
-    font-family: 'Times New Roman';
-    font-size: 16px;
+    font-family: 'Times New Roman'; 
+    font-size: 1.2em;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
-    max-width: 90%;
-    width: 550px;
-    font-weight: 400;
+    max-width: 550px;
+    weight: 400;
     color: #000000bd;
     line-height: 1.5;
-}
-
-@media screen and (max-width: 768px) {
-    body {
-        font-size: 18px;
-        width: 95%;
-    }
 }
 hr {
     margin-top: 1px solid #eee;
