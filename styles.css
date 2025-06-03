@@ -8,9 +8,20 @@ body {
     font-weight: 400;
     color: #000000bd;
     line-height: 1.5;
+    padding-bottom: 50px;
+}
+
+header {
+    margin-bottom: 2em;
+}
+
+main {
+    margin-top: 1em;
 }
 hr {
-    margin-top: 1px solid #eee;
+    margin: 2em 0;
+    border: none;
+    border-top: 1px solid #eee;
 }
 p {
     margin-bottom: 32px
