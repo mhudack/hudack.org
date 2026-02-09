@@ -1,57 +1,191 @@
+/* ——— Custom Properties ——— */
+:root {
+    --bg: #FAF8F5;
+    --bg-subtle: #F2EFEB;
+    --text: #2C2926;
+    --text-muted: #6B6560;
+    --accent: #B5451B;
+    --accent-hover: #D4601F;
+    --divider: #E2DED8;
+    --font-display: "Instrument Serif", Georgia, serif;
+    --font-body: "DM Sans", -apple-system, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #1C1A17;
+        --bg-subtle: #262320;
+        --text: #E8E4DF;
+        --text-muted: #9B9590;
+        --accent: #D4733A;
+        --accent-hover: #E8944F;
+        --divider: #3A3633;
+    }
+}
+
+/* ——— Base ——— */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--font-body);
     font-size: 16px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    max-width: 550px;
     font-weight: 400;
-    color: #000000bd;
-    line-height: 1.5;
-    padding-bottom: 50px;
+    color: var(--text);
+    background-color: var(--bg);
+    line-height: 1.65;
+    margin: 0 auto;
+    padding: 80px 24px 100px;
+    max-width: 620px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+::selection {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+/* ——— Header ——— */
 header {
-    margin-bottom: 2em;
+    margin-bottom: 3em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid var(--divider);
 }
 
-main {
-    margin-top: 1em;
-}
-hr {
-    margin: 2em 0;
-    border: none;
-    border-top: 1px solid #eee;
-}
-p {
-    margin-bottom: 32px
-}
-a {
-    color: rgba(227, 5, 5, 0.836);
-}
 h1 {
-    text-transform: uppercase;
-    font-size: 2em;
+    font-family: var(--font-display);
+    font-size: 3em;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0;
+    color: var(--text);
 }
-h2 {
-    font-family: 'Garamond';
-    font-size: 1.5em;
-    text-transform: uppercase;
-}
-li {
-    line-height: 1.3em;
-}
-img {
-  margin-bottom: 32px;
-} 
 
-@media all and (orientation:portrait) {
+h2 {
+    font-family: var(--font-display);
+    font-size: 1.5em;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.75em;
+}
+
+/* ——— Typography ——— */
+p {
+    margin: 0 0 1.5em;
+    color: var(--text-muted);
+}
+
+main > p:first-of-type {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+/* ——— Links ——— */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease, color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    background-size: 100% 1px;
+}
+
+/* ——— Dividers ——— */
+hr {
+    border: none;
+    border-top: 1px solid var(--divider);
+    margin: 2.5em 0;
+}
+
+/* ——— Image ——— */
+img {
+    max-width: 100%;
+    border-radius: 4px;
+    margin-bottom: 1.5em;
+}
+
+/* ——— Lists ——— */
+ul {
+    padding-left: 1.25em;
+    margin-bottom: 1.5em;
+}
+
+li {
+    line-height: 1.5;
+    margin-bottom: 0.4em;
+    color: var(--text-muted);
+}
+
+li a {
+    color: var(--text);
+    font-weight: 500;
+}
+
+li a:hover {
+    color: var(--accent-hover);
+}
+
+li ul {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
+
+/* ——— Iframes / Embeds ——— */
+iframe {
+    border-radius: 4px;
+    max-width: 100%;
+}
+
+/* ——— Responsive ——— */
+@media all and (max-width: 700px) {
     body {
-        font-size: 22px;
+        font-size: 17px;
+        padding: 50px 20px 80px;
+    }
+
+    h1 {
+        font-size: 2.4em;
+    }
+
+    iframe {
+        width: 100% !important;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    iframe[src*="simplecast"] {
+        height: 200px !important;
+        aspect-ratio: auto;
+    }
+}
+
+@media all and (orientation: portrait) {
+    body {
+        font-size: 18px;
         width: 92%;
-        margin: 50px auto 0;
-        padding: 0;
+        padding: 50px 0 80px;
         max-width: none;
+    }
+
+    h1 {
+        font-size: 2.6em;
     }
 
     p, hr, ul {
@@ -67,7 +201,6 @@ img {
         aspect-ratio: 16/9;
     }
 
-    /* Special case for the podcast player which needs fixed height */
     iframe[src*="simplecast"] {
         height: 200px !important;
         aspect-ratio: auto;
